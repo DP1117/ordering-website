@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- CSS only -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
+        
+        <!--Google Font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Volkhov:wght@700&display=swap" rel="stylesheet">
+        
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <title>ISpeedFood</title>
+    </head>
+    <body>
+
+        <!--Navigation Bar: Referenced from GetBootstrap.com-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" class="navigationBar"> <!--Color of NavBar and calling navbar class in bootstrap-->
+            <div class="container">
+              <a class="navbar-brand" href="#">ISpeedFood</a> <!--The Header of the Navbar-->
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <!--Dropdown button of the ul's when display screen is at a certain size-->
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+              	<!--Links in the Navigation Bar-->
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="home.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#aboutUs">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="menu.html">Menu</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="order.php">Order</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contactUs.html">Contact Us</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          
+
+        <!--Title and Image-->
+        <div class="beginning">
+            <h1 class="header">ISpeedFood</h1>
+            <br/>
+            <video controls autoplay loop muted src="videos/cooking.mp4" width="500"></video>
+            <br/><br/>
+        </div>
+        
+	<!--About Us-->
+        <div class="aboutUs" id="aboutUs">
+          <br/>
+          <h2>
+            <mark class="header highlightRed">
+              About Us
+            </mark>
+          </h2>
+          <img src="images/abousUs.jpg" alt="Park Family Picture" width="500">
+          <br/><br/>
+          <p>
+            Hello! We are <u>ISpeedFood</u>, and we have <u>over 15 years</u> <br/>
+            of experience in cooking South Korean cuisine. For <u>over a decade</u>, <br/>
+            we cooked and served delicious meals to a variety of customers as a vendor.<br/>
+            We're currently cooking at <mark>Columbia University</mark>, and we have cooked at <br/>
+            <u>Baruch College, Queens Community College, and Flushing</u>.<br/>
+            Our <mark>Chicken Teriyaki</mark> is very popular with many of our customers. You should try it out too!
+          </p>
+        </div>
+
+	<!--Location-->
+        <div class="location" id="location">
+          <br/>
+          <h2>
+            <mark class="header highlightRed">
+              Location
+            </mark>
+          </h2>
+          <img src="images/LewisohnHall.jpg" alt="Location Picture" width="500">
+          <br/><br/>
+          <p>
+            Our vendor is located behind <a href="https://www.google.com/maps/place/Lewisohn+Hall/@40.8083889,-73.9638335,172m/data=!3m2!1e3!4b1!4m6!3m5!1s0x89c2f63eec1152a9:0x54bb82d392c1c07f!8m2!3d40.8083889!4d-73.9631898!16s%2Fg%2F11ckqncwj5?entry=ttu" target="_blank">Columbia University's  Lewisohn Hall</a>!
+            <br/>
+            Address: Columbia University, USA, 2970 Broadway, New York, NY 10027
+            <br/>
+            Hours: Mon-Fri (10:30 A.M - 7:30 P.M)
+          </p>
+        </div>
+
+    </body>
+</html>
