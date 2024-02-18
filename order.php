@@ -156,7 +156,7 @@
                     <a class="nav-link" href="home.html#aboutUs">About Us</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="menu.html">Menu</a>
+                    <a class="nav-link" href="menu.php">Menu</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="order.php">Order</a>
@@ -202,18 +202,20 @@
         <label for="foodType">Select Food Item:</label>
         <select class="form-select forms" id="foodType" name="foodType" required>
           <option></option>
-          <option>Chicken Teriyaki-$9</option>
-          <option>Pork(Jeyuk)-$9</option>
-          <option>Beef(Bulgogi)-$10</option>
-          <option>Curry Rice-$10</option>
-          <option>Curry Noodle-$12</option>
-          <option>Fried Beef Dumplings-$10</option>
-          <option>Pork Jjajang Rice-$10</option>
-          <option>Pork Jjajang Noodle-$12</option>
-          <option>Rice Cake-$10</option>
-          <option>Chicken Cutlet-$10</option>
-          <option>Chicken Cutlet Curry-$12</option>
-          <option>Chicken Cutlet + Fried Dumplings(5 Pcs)-$14</option>
+          <!--Menu List-->
+          <?php 
+            $itemList = fopen("itemList.txt", "r"); 
+            
+            // Reading and displaying each option
+            while(!feof($itemList)) {
+                $option = explode(",", fgets($itemList));
+                echo "<option>" . $option[1] . ": " . $option[2] . "</option>\n";
+                if(!feof($itemList)){
+                   echo "          ";
+                }
+            }
+            fclose($itemList);
+          ?>
         </select>
       </div>
 

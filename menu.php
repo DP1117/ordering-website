@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- CSS only -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <!-- CSS only -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
 
-        <!-- JavaScript Bundle with Popper -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
+      <!-- JavaScript Bundle with Popper -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
+      
+      <!--Google Font-->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Volkhov:wght@700&display=swap" rel="stylesheet">
+      
+      <link href="style.css" rel="stylesheet" type="text/css">
 
-        <!--Google Font-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Volkhov:wght@700&display=swap" rel="stylesheet">
-
-        <link href="style.css" rel="stylesheet" type="text/css">
-        <title>Contact Us</title>
+      <title>Menu</title>
     </head>
     <body>
-
         <!--Navigation Bar: Referenced from GetBootstrap.com-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" class="navigationBar"> <!--Color of NavBar and calling navbar class in bootstrap-->
             <div class="container">
@@ -52,27 +53,36 @@
 
         <!--Title and Image-->
         <div class="beginning">
-            <h1 class="header">Contact Us</h1>
-        </div>
-
-        <div id="contactUs">
-          <p>
-            <h3>
-            <!--Call-->
-              <mark class="header highlightRed">
-                Call Or Message Us: 
-              </mark>
-              <a href="tel: 1111111111">111-111-1111</a>
-            </h3>
-            <h3>
-            <!--Mail-->
-              <mark class="header highlightRed">
-                Email Us: 
-              </mark>
-              <a href="mailto: koreanfoodbox1@gmail.com">koreanfoodbox1@gmail.com</a>
-            </h3>
-          </p>
+            <h1 class="header">Menu</h1>
         </div>
         
+        <!--Menu List-->
+        <div id="menu">
+
+          <?php 
+             $itemList = fopen("itemList.txt", "r"); 
+            
+             // Displaying each image
+             while(!feof($itemList)) {
+              $option = explode(",", fgets($itemList));
+              echo
+          '<!--' . $option[1] . '-->
+          <figure>
+            <img src="images/' .$option[0] . '.jpg" alt="' . $option[1] . '" width="500" class="menuImages">
+            <figcaption class="caption">
+              <p>
+                <mark class="highlight caption">' . 
+                  $option[1] . '-' . $option[2] . 
+                '</mark>
+              </p>
+            </figcaption>
+          </figure> <br/>' . "\n\n";
+              if(!feof($itemList)){
+                echo "          ";
+              }
+             }
+             fclose($itemList);
+          ?>
+        </div>     
     </body>
 </html>
